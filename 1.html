@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Requirement Checker</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            margin: 0 auto;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            width: 100%;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Visa Requirement Checker</h2>
+    <div class="container">
+        <select id="country">
+            <option value="">Select a country</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <option value="India">India</option>
+            <option value="UK">UK</option>
+            <option value="Australia">Australia</option>
+        </select>
+        <button onclick="checkVisa()">Check Visa</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function checkVisa() {
+            const country = document.getElementById("country").value;
+            let message = "";
+            switch (country) {
+                case "Australia":
+                    message = "eVisa available for eligible travelers.";
+                    break;
+                case "Canada":
+                    message = "Visa required unless you have an eTA.";
+                    break;
+                case "UK":
+                    message = "Visa depends on the duration of stay.";
+                    break;
+                case "USA":
+                    message = "Visa required for most applicants.";
+                    break;
+                case "India":
+                    message = "Visa required before travel.";
+                    break;
+                default:
+                    message = "Please select a country.";
+            }
+            document.getElementById("result").innerText = message;
+        }
+    </script>
+</body>
+</html>
