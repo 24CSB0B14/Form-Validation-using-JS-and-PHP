@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visa Requirement Checker</title>
+    <title>Visa Req Check</title>
     <style>
         body {
             text-align: center;
@@ -39,33 +39,33 @@
             <option value="UK">UK</option>
             <option value="Australia">Australia</option>
         </select>
-        <button onclick="checkVisa()">Check Visa</button>
+        <button onclick="VisaCheck()">Check Visa</button>
         <p id="result"></p>
     </div>
     <script>
-        function checkVisa() {
+        function VisaCheck() {
             const country = document.getElementById("country").value;
-            let message = "";
+            let msg = "";
             switch (country) {
                 case "Australia":
-                    message = "eVisa available for eligible travelers.";
+                    msg = "eVisa available for eligible travelers.";
                     break;
                 case "Canada":
-                    message = "Visa required unless you have an eTA.";
+                    msg = "Visa required unless you have an eTA.";
                     break;
                 case "UK":
-                    message = "Visa depends on the duration of stay.";
+                    msg = "Visa depends on the duration of stay.";
                     break;
                 case "USA":
-                    message = "Visa required for most applicants.";
+                    msg = "Visa required for most applicants.";
                     break;
                 case "India":
-                    message = "Visa required before travel.";
+                    msg = "Visa required before travel.";
                     break;
                 default:
-                    message = "Please select a country.";
+                    msg = "Please select a country.";
             }
-            document.getElementById("result").innerText = message;
+            document.getElementById("result").innerText = msg;
         }
     </script>
 </body>
